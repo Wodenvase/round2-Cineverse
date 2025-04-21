@@ -1,29 +1,50 @@
 
-import React, { useState } from 'react'
-import { Button } from './ui/button'
-import { Dialog, DialogContent, DialogTrigger } from './ui/dialog'
-import SignUpModal from './SignUpModal'
+import React, { useState } from "react";
+import { Button } from "./ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import SignUpModal from "./SignUpModal";
+import { Link, useLocation } from "react-router-dom";
+
+const navLinks = [
+  { label: "Home", to: "/" },
+  { label: "Movies", to: "/movies" },
+  { label: "TV Shows", to: "/tvshows" },
+  { label: "My List", to: "/mylist" },
+];
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const handleSignInClick = () => {
-    console.log("Sign In button clicked")
-    setIsOpen(true)
-  }
+    console.log("Sign In button clicked");
+    setIsOpen(true);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-cinema-dark to-transparent py-4">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <h1 className="text-2xl font-bold text-white mr-8">
-            <span className="text-primary">Cine</span>Verse
-          </h1>
+          <Link to="/" className="focus:outline-none">
+            <h1 className="text-2xl font-bold text-white mr-8">
+              <span className="text-primary">Cine</span>Verse
+            </h1>
+          </Link>
           <div className="hidden md:flex space-x-6">
-            <a href="#" className="text-white hover:text-primary transition-colors">Home</a>
-            <a href="#" className="text-white hover:text-primary transition-colors">Movies</a>
-            <a href="#" className="text-white hover:text-primary transition-colors">TV Shows</a>
-            <a href="#" className="text-white hover:text-primary transition-colors">My List</a>
+            {navLinks.map((nav) => (
+              <Link
+                key={nav.label}
+                to={nav.to}
+                className={`text-white hover:text-primary transition-colors focus:outline-none ${
+                  location.pathname === nav.to
+                    ? "font-semibold text-primary"
+                    : ""
+                }`}
+                tabIndex={0}
+              >
+                {nav.label}
+              </Link>
+            ))}
           </div>
         </div>
         <div className="flex items-center space-x-4">
@@ -43,7 +64,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
