@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection'
 import MovieCarousel from '@/components/MovieCarousel'
 import GenreFilter from '@/components/GenreFilter'
 import { trendingMovies, popularMovies } from '@/data/movies'
+import MovieGrid from '@/components/MovieGrid'
 import { Button } from '@/components/ui/button'
 
 const banners = [
@@ -70,6 +71,12 @@ const Index = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Display trending movie posters in a grid below banners */}
+      <div className="container mx-auto py-10">
+        <h2 className="text-2xl font-bold text-white mb-5">Featured Movies</h2>
+        <MovieGrid movies={trendingMovies.slice(0, 4)} />
       </div>
 
       <div className="py-8">

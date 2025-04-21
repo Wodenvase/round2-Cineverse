@@ -1,12 +1,19 @@
 
 import React from "react";
+import Navbar from "@/components/Navbar";
+import MovieGrid from "@/components/MovieGrid";
+import { trendingMovies } from "@/data/movies";
 
+// For demo, use trendingMovies as "saved" list
 const MyList = () => (
-  <main className="min-h-screen bg-cinema-dark text-white py-10">
-    <div className="container mx-auto text-center">
-      <h1 className="text-3xl font-bold mb-4">My List</h1>
-      <p className="text-cinema-text mb-4">Your saved movies and TV shows will appear here.</p>
-      {/* Empty state - add personalized list feature in future */}
+  <main className="min-h-screen bg-cinema-dark text-white pb-10">
+    <Navbar />
+    <div className="container mx-auto pt-12">
+      <h1 className="text-3xl font-bold mb-4 text-center">My List</h1>
+      <p className="text-cinema-text mb-8 text-center">
+        Your saved movies and TV shows will appear here.
+      </p>
+      <MovieGrid movies={trendingMovies} />
     </div>
   </main>
 );
