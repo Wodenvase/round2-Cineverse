@@ -18,6 +18,11 @@ const genres = [
 const GenreFilter = () => {
   const [activeGenre, setActiveGenre] = useState('All')
 
+  const handleButtonClick = (genre: string) => {
+    console.log(`Genre filter clicked: ${genre}`)
+    setActiveGenre(genre)
+  }
+
   return (
     <div className="container mx-auto my-6">
       <h2 className="text-xl font-semibold text-white mb-4">Browse by Genre</h2>
@@ -27,11 +32,11 @@ const GenreFilter = () => {
             key={genre}
             variant={activeGenre === genre ? "default" : "outline"}
             className={`rounded-full ${
-              activeGenre === genre 
-                ? 'bg-primary hover:bg-primary/90 text-white' 
+              activeGenre === genre
+                ? 'bg-primary hover:bg-primary/90 text-white'
                 : 'bg-transparent border-cinema-text/30 text-cinema-text hover:text-white hover:border-white'
             }`}
-            onClick={() => setActiveGenre(genre)}
+            onClick={() => handleButtonClick(genre)}
           >
             {genre}
           </Button>

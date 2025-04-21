@@ -4,6 +4,14 @@ import { Button } from './ui/button'
 import { Play } from 'lucide-react'
 
 const HeroSection = () => {
+  const handleWatchFreeClick = () => {
+    console.log('Watch Free For 30 Days clicked')
+  }
+
+  const handleExplorePlansClick = () => {
+    console.log('Explore Plans clicked')
+  }
+
   return (
     <div className="relative h-[80vh] overflow-hidden">
       {/* Hero Background Image */}
@@ -28,10 +36,19 @@ const HeroSection = () => {
             Watch anywhere. Cancel anytime. Premium content at your fingertips.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-white"
+              onClick={handleWatchFreeClick}
+            >
               <Play className="mr-2 h-4 w-4" /> Watch Free For 30 Days
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white/10"
+              onClick={handleExplorePlansClick}
+            >
               Explore Plans
             </Button>
           </div>

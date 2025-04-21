@@ -7,6 +7,11 @@ import SignUpModal from './SignUpModal'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
+  const handleSignInClick = () => {
+    console.log("Sign In button clicked")
+    setIsOpen(true)
+  }
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-cinema-dark to-transparent py-4">
       <div className="container mx-auto flex items-center justify-between">
@@ -22,9 +27,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex items-center space-x-4">
-          <Dialog>
+          <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-              <Button className="bg-primary hover:bg-primary/90 text-white">
+              <Button
+                className="bg-primary hover:bg-primary/90 text-white"
+                onClick={handleSignInClick}
+              >
                 Sign In
               </Button>
             </DialogTrigger>
