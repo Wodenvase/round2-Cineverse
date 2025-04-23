@@ -10,6 +10,8 @@ interface Movie {
   rating: string;
   duration: string;
   genre: string;
+  description: string;
+  trailer: string;
 }
 
 interface MovieGridProps {

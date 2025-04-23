@@ -13,7 +13,7 @@ export const trendingMovies = [
   {
     id: 2,
     title: "Interstellar",
-    image: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=800&auto=format&fit=crop",
     year: "2014",
     rating: "PG-13",
     duration: "2h 49m",
@@ -35,7 +35,7 @@ export const trendingMovies = [
   {
     id: 4,
     title: "Inception",
-    image: "https://images.unsplash.com/photo-1504467444613-35646bb27254?w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop",
     year: "2010",
     rating: "PG-13",
     duration: "2h 28m",
@@ -93,7 +93,7 @@ export const popularMovies = [
   {
     id: 104,
     title: "The Matrix",
-    image: "https://images.unsplash.com/photo-1505765050516-f79dc3b7fe19?w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop",
     year: "1999",
     rating: "R",
     duration: "2h 16m",

@@ -1,22 +1,23 @@
-
 import React, { useRef } from 'react'
 import MovieCard from './MovieCard'
 import { Button } from './ui/button'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface Movie {
-  id: number
-  title: string
-  image: string
-  year: string
-  rating: string
-  duration: string
-  genre: string
+  id: number;
+  title: string;
+  image: string;
+  year: string;
+  rating: string;
+  duration: string;
+  genre: string;
+  description: string;
+  trailer: string;
 }
 
 interface MovieCarouselProps {
-  title: string
-  movies: Movie[]
+  title: string;
+  movies: Movie[];
 }
 
 const MovieCarousel = ({ title, movies }: MovieCarouselProps) => {
@@ -42,7 +43,6 @@ const MovieCarousel = ({ title, movies }: MovieCarouselProps) => {
         <h2 className="text-2xl font-bold text-white mb-4">{title}</h2>
         
         <div className="relative group">
-          {/* Navigation Buttons */}
           <Button 
             variant="outline"
             size="icon"
@@ -61,7 +61,6 @@ const MovieCarousel = ({ title, movies }: MovieCarouselProps) => {
             <ChevronRight className="h-6 w-6" />
           </Button>
           
-          {/* Movie Cards */}
           <div 
             ref={carouselRef}
             className="flex overflow-x-auto gap-4 pb-5 scrollbar-hide snap-x"
@@ -69,14 +68,7 @@ const MovieCarousel = ({ title, movies }: MovieCarouselProps) => {
           >
             {movies.map((movie) => (
               <div key={movie.id} className="flex-shrink-0 snap-start">
-                <MovieCard 
-                  title={movie.title}
-                  image={movie.image}
-                  year={movie.year}
-                  rating={movie.rating}
-                  duration={movie.duration}
-                  genre={movie.genre}
-                />
+                <MovieCard {...movie} />
               </div>
             ))}
           </div>
