@@ -1,12 +1,13 @@
-
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Navbar from '@/components/Navbar'
 import HeroSection from '@/components/HeroSection'
 import MovieCarousel from '@/components/MovieCarousel'
 import GenreFilter from '@/components/GenreFilter'
-import { trendingMovies, popularMovies } from '@/data/movies'
+import { trendingMovies, popularMovies, actionMovies, romanceMovies } from '@/data/movies'
 import MovieGrid from '@/components/MovieGrid'
 import { Button } from '@/components/ui/button'
+import { useToast } from '@/hooks/use-toast'
 
 const banners = [
   {
@@ -15,6 +16,7 @@ const banners = [
     description: "Dive into the most thrilling action movies.",
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1400&q=80",
     buttonText: "Browse Action",
+    genre: "Action"
   },
   {
     id: 2,
@@ -22,32 +24,47 @@ const banners = [
     description: "Feel the love with top romance films.",
     image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=1400&q=80",
     buttonText: "Browse Romance",
+    genre: "Romance"
   }
 ]
 
 const Index = () => {
+  const [activeGenre, setActiveGenre] = useState('All')
+  const navigate = useNavigate()
+  const { toast } = useToast()
 
-  const handleBannerButtonClick = (bannerTitle: string) => {
-    console.log(`Banner button clicked: ${bannerTitle}`)
-    // In a real app, this could navigate or filter movies by the banner category
+  const handleBannerButtonClick = (genre: string) => {
+    setActiveGenre(genre)
   }
 
   const handleTrialButtonClick = () => {
-    console.log("Start Your Free Trial button clicked")
+    toast({
+      title: "Free Trial Started",
+      description: "Welcome to your 30-day free trial!",
+    })
   }
+
+  const handleExplorePlansClick = () => {
+    toast({
+      title: "Subscription Plans",
+      description: "Browse our flexible subscription options.",
+    })
+  }
+
+  const allMovies = [...trendingMovies, ...popularMovies, ...actionMovies, ...romanceMovies]
 
   return (
     <div className="min-h-screen bg-cinema-dark text-white">
       <Navbar />
       <HeroSection />
 
-      {/* New banners/posters section */}
+      {/* Banner/posters section */}
       <div className="container mx-auto py-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
         {banners.map(banner => (
           <div
             key={banner.id}
             className="relative rounded-lg overflow-hidden cursor-pointer group"
-            onClick={() => handleBannerButtonClick(banner.title)}
+            onClick={() => handleBannerButtonClick(banner.genre)}
             style={{ height: '260px' }}
           >
             <img
@@ -63,7 +80,7 @@ const Index = () => {
                 className="bg-primary hover:bg-primary/90 text-white w-max"
                 onClick={(e) => {
                   e.stopPropagation()
-                  handleBannerButtonClick(banner.title)
+                  handleBannerButtonClick(banner.genre)
                 }}
               >
                 {banner.buttonText}
@@ -73,18 +90,20 @@ const Index = () => {
         ))}
       </div>
 
-      {/* Display trending movie posters in a grid below banners */}
+      <GenreFilter activeGenre={activeGenre} onGenreChange={setActiveGenre} />
+      
+      {/* Display filtered movies */}
       <div className="container mx-auto py-10">
         <h2 className="text-2xl font-bold text-white mb-5">Featured Movies</h2>
-        <MovieGrid movies={trendingMovies.slice(0, 4)} />
+        <MovieGrid movies={allMovies} selectedGenre={activeGenre} />
       </div>
 
+      {/* Keep existing carousels code */}
       <div className="py-8">
-        <GenreFilter />
-
         <MovieCarousel title="Trending Now" movies={trendingMovies} />
-
         <MovieCarousel title="Popular on CineVerse" movies={popularMovies} />
+        <MovieCarousel title="Action Movies" movies={actionMovies} />
+        <MovieCarousel title="Romance Movies" movies={romanceMovies} />
 
         <div className="container mx-auto my-16 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Watch?</h2>
@@ -92,7 +111,7 @@ const Index = () => {
             Join CineVerse today and get access to thousands of movies and TV shows. 
             Cancel anytime, no commitment required.
           </p>
-          <div className="inline-block">
+          <div className="flex justify-center gap-4">
             <div className="relative animate-pulse-subtle">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-cinema-blue rounded-lg blur"></div>
               <button
@@ -102,10 +121,18 @@ const Index = () => {
                 Start Your Free Trial
               </button>
             </div>
+            <Button
+              variant="outline"
+              className="border-white text-white hover:bg-white/10"
+              onClick={handleExplorePlansClick}
+            >
+              Explore Plans
+            </Button>
           </div>
         </div>
       </div>
 
+      {/* Keep existing footer code */}
       <footer className="bg-cinema-darkpurple py-8">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
