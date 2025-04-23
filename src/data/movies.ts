@@ -1,8 +1,9 @@
+
 export const trendingMovies = [
   {
     id: 1,
     title: "Spider-Man: No Way Home",
-    image: "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=800&auto=format&fit=crop",
+    image: "https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_.jpg",
     year: "2021",
     rating: "PG-13",
     duration: "2h 28m",
@@ -13,7 +14,7 @@ export const trendingMovies = [
   {
     id: 2,
     title: "Interstellar",
-    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=800&auto=format&fit=crop",
+    image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
     year: "2014",
     rating: "PG-13",
     duration: "2h 49m",
@@ -24,7 +25,7 @@ export const trendingMovies = [
   {
     id: 3,
     title: "The Shawshank Redemption",
-    image: "https://images.unsplash.com/photo-1603486823338-52498b9d2343?w=800&auto=format&fit=crop",
+    image: "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
     year: "1994",
     rating: "R",
     duration: "2h 22m",
@@ -35,7 +36,7 @@ export const trendingMovies = [
   {
     id: 4,
     title: "Inception",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop",
+    image: "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
     year: "2010",
     rating: "PG-13",
     duration: "2h 28m",
@@ -46,7 +47,7 @@ export const trendingMovies = [
   {
     id: 5,
     title: "The Lion King",
-    image: "https://images.unsplash.com/photo-1564599365444-fca9bb299992?w=800&auto=format&fit=crop",
+    image: "https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg",
     year: "1994",
     rating: "G",
     duration: "1h 28m",
@@ -60,7 +61,7 @@ export const popularMovies = [
   {
     id: 101,
     title: "Iron Man",
-    image: "https://images.unsplash.com/photo-1635805739892-ab7b431400f7?w=800&auto=format&fit=crop",
+    image: "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_.jpg",
     year: "2008",
     rating: "PG-13",
     duration: "2h 6m",
@@ -71,7 +72,7 @@ export const popularMovies = [
   {
     id: 102,
     title: "The Dark Knight",
-    image: "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=800&auto=format&fit=crop",
+    image: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
     year: "2008",
     rating: "PG-13",
     duration: "2h 32m",
@@ -82,7 +83,7 @@ export const popularMovies = [
   {
     id: 103,
     title: "Forrest Gump",
-    image: "https://images.unsplash.com/photo-1597773150796-e5c1fb946668?w=800&auto=format&fit=crop",
+    image: "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
     year: "1994",
     rating: "PG-13",
     duration: "2h 22m",
@@ -93,7 +94,7 @@ export const popularMovies = [
   {
     id: 104,
     title: "The Matrix",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop",
+    image: "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
     year: "1999",
     rating: "R",
     duration: "2h 16m",
@@ -104,7 +105,7 @@ export const popularMovies = [
   {
     id: 105,
     title: "Toy Story",
-    image: "https://images.unsplash.com/photo-1548372248-ef6868b9659a?w=800&auto=format&fit=crop",
+    image: "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_.jpg",
     year: "1995",
     rating: "G",
     duration: "1h 21m",
@@ -118,7 +119,7 @@ export const actionMovies = [
   {
     id: 201,
     title: "Mad Max: Fury Road",
-    image: "https://m.media-amazon.com/images/M/MV5BN2EwM2I5OWMtODA2My00ODk4LTg0YjgtNmI1ZTEwZDcwM2I4XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    image: "https://m.media-amazon.com/images/M/MV5BN2EwM2I5OWMtMDQ2My00ODk4LTg0YjgtNmI1ZTEwZDcwM2I4XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
     year: "2015",
     rating: "R",
     duration: "2h",
@@ -129,7 +130,7 @@ export const actionMovies = [
   {
     id: 202,
     title: "Mission: Impossible - Fallout",
-    image: "https://m.media-amazon.com/images/M/MV5BNjRlZmM0ODktY2MwOC00NWQ5LWE2MmQtODk2OTAyZjZjNTQ3XkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
+    image: "https://m.media-amazon.com/images/M/MV5BNjRlZmM0ODktY2RiNS00ZDFmLTg2NWUtMDVlOGVmYzNiNTlmXkEyXkFqcGdeQXVyNjQ2OTk4MzI@._V1_.jpg",
     year: "2018",
     rating: "PG-13",
     duration: "2h 27m",
@@ -140,7 +141,7 @@ export const actionMovies = [
   {
     id: 203,
     title: "John Wick",
-    image: "https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODQ2NV5BMl5BanBnXkFtZTgwMTM2NTI4MjE@._V1_.jpg",
+    image: "https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_.jpg",
     year: "2014",
     rating: "R",
     duration: "1h 41m",
@@ -185,3 +186,4 @@ export const romanceMovies = [
     trailer: "https://www.youtube.com/embed/Ur_pOG-1J0I"
   },
 ];
+
