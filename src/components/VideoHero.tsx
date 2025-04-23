@@ -2,16 +2,27 @@
 import React from 'react';
 import { Play } from 'lucide-react';
 import { Button } from './ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const VideoHero = () => {
+  const navigate = useNavigate();
+
+  const handleStartWatching = () => {
+    navigate('/movies');
+  };
+
+  const handleBrowseCatalog = () => {
+    navigate('/movies');
+  };
+
   return (
     <div className="relative h-[90vh] overflow-hidden">
-      {/* Video Background */}
+      {/* Movie Collage Background */}
       <div className="absolute inset-0">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1920&q=80')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-cinema-darkpurple via-cinema-darkpurple/50 to-transparent" />
@@ -30,6 +41,7 @@ const VideoHero = () => {
             <Button 
               size="lg"
               className="bg-primary hover:bg-primary/90 text-white px-8"
+              onClick={handleStartWatching}
             >
               <Play className="mr-2 h-4 w-4" /> Start Watching
             </Button>
@@ -37,6 +49,7 @@ const VideoHero = () => {
               variant="outline"
               size="lg"
               className="border-white text-white hover:bg-white/10"
+              onClick={handleBrowseCatalog}
             >
               Browse Catalog
             </Button>

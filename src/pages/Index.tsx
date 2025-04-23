@@ -5,6 +5,7 @@ import VideoHero from '@/components/VideoHero';
 import MovieCarousel from '@/components/MovieCarousel';
 import GenreFilter from '@/components/GenreFilter';
 import SignUpModal from '@/components/SignUpModal';
+import AboutUs from '@/components/AboutUs';
 import { trendingMovies, popularMovies } from '@/data/movies';
 
 const Index = () => {
@@ -22,6 +23,8 @@ const Index = () => {
 
       <MovieCarousel title="Trending Now" movies={trendingMovies} />
       <MovieCarousel title="Popular on CineVerse" movies={popularMovies} />
+      
+      <AboutUs />
 
       <SignUpModal 
         isOpen={isSignUpOpen}
