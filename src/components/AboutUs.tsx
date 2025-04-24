@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { UsersRound } from 'lucide-react';
@@ -10,31 +9,11 @@ import {
 } from '@/components/ui/accordion';
 
 const teamMembers = [
-  {
-    name: "Dipanta Bhattacharyya",
-    role: "Lead Developer",
-    about: "Full-stack developer with expertise in React and Node.js"
-  },
-  {
-    name: "Ritvik Kumar",
-    role: "Frontend Specialist",
-    about: "UI/UX enthusiast focused on creating seamless user experiences"
-  },
-  {
-    name: "Navneet Agrawal",
-    role: "Backend Developer",
-    about: "Database expert specializing in system architecture"
-  },
-  {
-    name: "Vinayak Dev Mishra",
-    role: "DevOps Engineer",
-    about: "Infrastructure and deployment specialist"
-  },
-  {
-    name: "Sahil Saxena",
-    role: "Product Manager",
-    about: "Overseeing product development and team coordination"
-  }
+  "Dipanta Bhattacharyya",
+  "Ritvik Kumar",
+  "Navneet Agrawal",
+  "Vinayak Dev Mishra",
+  "Sahil Saxena"
 ];
 
 const faqs = [
@@ -63,24 +42,19 @@ const AboutUs = () => {
         <CardHeader className="text-center">
           <CardTitle className="text-3xl font-bold flex items-center justify-center gap-2">
             <UsersRound className="h-8 w-8 text-primary" />
-            Meet Team Ambitians
+            About CineVerse
           </CardTitle>
           <p className="text-white/60 mt-4 max-w-2xl mx-auto">
-            We're a passionate team of developers dedicated to creating the ultimate streaming experience. 
+            We're a passionate team dedicated to creating the ultimate streaming experience. 
             Our mission is to bring quality entertainment to viewers worldwide through innovative technology.
           </p>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {teamMembers.map((member) => (
-              <div 
-                key={member.name}
-                className="p-4 rounded-lg bg-card/5 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-colors"
-              >
-                <h3 className="text-xl font-semibold text-white/80">{member.name}</h3>
-                <p className="text-primary/80 mt-1 text-sm">{member.role}</p>
-                <p className="text-white/50 mt-2 text-sm">{member.about}</p>
-              </div>
+          <div className="flex flex-wrap justify-end gap-2 text-xs text-white/50">
+            {teamMembers.map((name) => (
+              <span key={name} className="after:content-['•'] after:ml-2 last:after:content-none">
+                {name}
+              </span>
             ))}
           </div>
         </CardContent>
